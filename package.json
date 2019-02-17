@@ -1,0 +1,23 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "description": "this is the backend for the news project",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js",
+        "server": "nodemon server.js"
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "concurrently": "^4.1.0",
+        "express": "^4.16.4",
+        "mongoose": "^5.4.13",
+        "validator": "^10.11.0"
+    },
+    "devDependencies": {
+        "nodemon": "^1.18.10"
+    }
+}
