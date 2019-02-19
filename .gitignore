@@ -1,5 +1,5 @@
+yarn.lock
 config/
 node_modules/
 .vscode/
 package-lock.json
-yarn.lock
