@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const playlists_apis_routes = require("./routes/api/playlist");
+const videos_apis_routes = require("./routes/api/videos");
 const { mongoURI } = require("./config/keys");
 const app = express();
 
@@ -12,13 +13,14 @@ app.use(bodyParser.json());
 // @Desc    Connects the application to the database
 // @Databse Mongo Atlas -> Amazon Web Services
 mongoose
-    .connect(mongoURI)
+    .connect(mongoURI, { useNewUrlParser: true })
     .then(() => console.log("db conected ........"))
     .catch(err => console.log("err", err));
 
 // @Middleware  Playlists endpoints middleware
 // @Desc        Redirects playlits requests to playlists apis folder
 app.use("/api/playlists", playlists_apis_routes);
+app.use("/api/videos", videos_apis_routes);
 
 // @Port    Server connection port
 // @Desc    Looks for defined port number in environment else uses 5000
